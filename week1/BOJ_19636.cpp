@@ -24,7 +24,7 @@ int main()
     }
     
 
-    if(w1<=0){
+    if(w1<=0){  //반영X
         cout<<"Danger Diet"<<'\n';
     }
     else{
@@ -32,7 +32,7 @@ int main()
     }      
 
 
-    if(w2<=0 || meta<=0){
+    if(w2<=0 || meta<=0){  //반영O
         cout<<"Danger Diet";
     }
     else{

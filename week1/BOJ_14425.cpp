@@ -7,6 +7,7 @@ int main()
 {
     int N,M;
     string str;
+    
     int cnt=0;
     set<string> S;
     

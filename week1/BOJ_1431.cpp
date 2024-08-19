@@ -26,7 +26,7 @@ int comp(string A, string B)
     }
 
     else{
-        return A < B;  //사전순
+        return A < B;  //사전순으로
     }
     
 }
