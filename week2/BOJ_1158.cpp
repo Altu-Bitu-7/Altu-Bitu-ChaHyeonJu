@@ -11,8 +11,8 @@ int main(){
 
     queue<int> q;
 
-    for(int i=1; i<=n; i++){
-        q.push(i);
+    for(int i=1; i<=n; i++){    //1~n 삽입
+        q.push(i);  
     }
 
     cout<<'<';
