@@ -3,27 +3,37 @@
 
 using namespace std;
 
-int main()
+int findString(const set<string>& s, int m)
 {
-    int N,M;
+    int cnt = 0;
     string str;
-    
-    int cnt=0;
-    set<string> S;
-    
-    cin>>N>>M;
 
-    for(int i=0; i<N; i++){
+    for(int i=0; i<m; i++){
         cin>>str;
-        S.insert(str);
-    }
-
-    for(int i=0; i<M; i++){
-        cin>>str;
-        if(S.find(str)!=S.end()){
+        if(s.find(str)!=s.end()){
             cnt++;
         }
     }
+    return cnt;
+}
+
+int main()
+{
+    int n,m;
+    string str;
+    
+    set<string> s;
+    
+    cin>>n>>m;
+
+    for(int i=0; i<n; i++){
+        cin>>str;
+        s.insert(str);
+    }
+
+    int cnt = findString(s, m);
 
     cout<<cnt;
+
+    return 0;
 }

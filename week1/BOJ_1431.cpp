@@ -4,48 +4,51 @@
 
 using namespace std;
 
-int comp(string A, string B)
+int sumNum(const string& str)
 {
-    int A_sum=0, B_sum=0;
+    int sum = 0;
+    for(int i=0; i<str.size(); i++){  //숫자 합
+        if(str[i]>='0' && str[i]<='9'){
+            sum += str[i] - '0';
+        }
+    }
+    return sum;
 
+}
+
+bool cmp(const string& A, const string& B) //중간에 값 바뀌지 않도록 상수로 선언
+{
     if(A.size() != B.size()){
-        return A.size()<B.size();  //짧은 순서대로
+        return A.size()<B.size();  //짧은 문자열 우선
     }
     
-    for(int i=0; i<A.size(); i++){  //숫자 합 작은 순서대로
-        if(A[i]>='0' && A[i]<='9'){
-            A_sum += A[i] - '0';
-        }
-        if(B[i]>='0' && B[i]<='9'){
-            B_sum += B[i] - '0';
-        }
-    }
+    int A_sum=sumNum(A), B_sum=sumNum(B);
 
-    if(A_sum != B_sum){
+    if(A_sum != B_sum){    //길이 같은 경우, 숫자 합 작은 문자열 우선
         return A_sum < B_sum;
     }
 
-    else{
-        return A < B;  //사전순으로
-    }
+    return A < B;  //길이, 숫자 합 모두 같은 경우, 사전순 정렬
     
 }
 
 int main()
 {
-    int N;
-    cin>>N;
+    int n;
+    cin>>n;
 
-    vector<string> num(N); //미리 할당
+    vector<string> num(n); //미리 할당
 
-    for(int i=0; i<N; i++){
+    for(int i=0; i<n; i++){
         cin>>num[i];
     }
 
-    sort(num.begin(),num.end(),comp);
+    sort(num.begin(),num.end(),cmp);
 
-    for(int i=0; i<N; i++){
+    for(int i=0; i<n; i++){
         cout<<num[i]<<'\n';
     }
+
+    return 0;
 
 }
