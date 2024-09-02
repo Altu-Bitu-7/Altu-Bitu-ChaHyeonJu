@@ -3,12 +3,7 @@
 
 using namespace std;
 
-
-
-int main(){
-    int n, k;
-    cin>>n>>k;
-
+void josephus(int n, int k){
     queue<int> q;
 
     for(int i=1; i<=n; i++){    //1~n 삽입
@@ -34,7 +29,16 @@ int main(){
     }
 
     cout<<'>';
-    
 
+}
+
+int main(){
+    int n, k;
+    cin>>n>>k;
+
+    queue<int> q;
+
+    josephus(n, k);
+    
     return 0;
 }
