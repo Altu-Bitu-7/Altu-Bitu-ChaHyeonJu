@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const int MAX = 100000;
+const int MAX = 1000000;
 
 void getPrime(vector<bool>& prime){
     prime[0]=prime[1]=false;    //0, 1 제외
@@ -14,7 +14,7 @@ void getPrime(vector<bool>& prime){
         }
 
         for(int j=i+i; j<=MAX; j+=i){
-            prime[j]==true;
+            prime[j] = false;   //소수의 배수도 소수가 아니므로 false
         }
     }
 }
@@ -35,17 +35,18 @@ int main(){
             break;
         }
 
+        bool is_prime = false;
+
         for(int a=3; a<=n/2; a+=2){ //홀수인 소수 구해야 함
              if(prime[a] && prime[n - a]){
                 cout<<n<<" = "<<a<<" + "<<n-a<<'\n';
+                is_prime = true;
                 break;
             }
-            
-            else{
-                cout<<"Goldbach's conjecture is wrong.\n";
-                break;
-            }
+        }
 
+        if(!is_prime){
+                cout<<"Goldbach's conjecture is wrong.\n";
         }        
 
     }
