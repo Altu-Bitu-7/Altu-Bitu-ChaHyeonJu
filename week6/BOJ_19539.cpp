@@ -7,7 +7,7 @@ int main(){
     int n;
     cin>>n;
 
-    vector<int> h;
+    vector<int> h(n);
     long long total = 0, q = 0, r = 0;
 
     for(int i=0; i<n; i++){
