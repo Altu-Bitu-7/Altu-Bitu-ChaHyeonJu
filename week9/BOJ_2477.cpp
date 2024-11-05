@@ -21,9 +21,9 @@ int calculate(int k, vector<pair<int, int>>& sides) {
     int smallWidth = abs(sides[(total_width + 5) % 6].second - sides[(total_width + 1) % 6].second);
     int smallHeight = abs(sides[(total_height + 5) % 6].second - sides[(total_height + 1) % 6].second);
 
-    int bigArea = max_width * max_height;
-    int smallArea = smallWidth * smallHeight;
-    int total = (bigArea - smallArea) * k;
+    int big_area = max_width * max_height;
+    int small_area = smallWidth * smallHeight;
+    int total = (big_area - small_area) * k;
 
     return total;
 }
